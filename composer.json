@@ -30,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "bXi\\PDFMerger\\": "src/PDFMerger"
+            "Bxi\\PDFMerger\\": "src/PDFMerger"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "bXi\\PDFMerger\\Test\\": "tests"
+            "Bxi\\PDFMerger\\Test\\": "tests"
         }
     },
     "scripts": {

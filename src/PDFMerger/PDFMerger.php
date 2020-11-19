@@ -10,7 +10,7 @@
 *  -
 */
 
-namespace Webklex\PDFMerger;
+namespace Bxi\PDFMerger;
 
 use FPDI;
 use Illuminate\Filesystem\Filesystem;

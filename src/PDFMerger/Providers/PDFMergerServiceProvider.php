@@ -10,10 +10,10 @@
 *  -
 */
 
-namespace Webklex\PDFMerger\Providers;
+namespace Bxi\PDFMerger\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Webklex\PDFMerger\PDFMerger;
+use Bxi\PDFMerger\PDFMerger;
 
 class PDFMergerServiceProvider extends ServiceProvider
 {

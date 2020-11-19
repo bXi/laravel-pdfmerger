@@ -1,21 +1,21 @@
 {
-    "name": "webklex/laravel-pdfmerger",
+    "name": "bXi/laravel-pdfmerger",
     "type": "library",
     "description": "Generic PDF merger for Laravel",
     "keywords": [
-        "webklex",
+        "bXi",
         "laravel",
         "pdf",
         "merger",
         "pdfmerger"
     ],
-    "homepage": "https://github.com/webklex/pdfmerger",
+    "homepage": "https://github.com/bXi/pdfmerger",
     "license": "MIT",
     "authors": [
         {
-            "name": "Malte Goldenbaum",
-            "email": "github@webklex.com",
-            "role": "Developer"
+            "name": "Dennis Meinen",
+            "email": "github@bXi.com",
+            "role": "Maintainer"
         }
     ],
     "require": {
@@ -30,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Webklex\\PDFMerger\\": "src/PDFMerger"
+            "bXi\\PDFMerger\\": "src/PDFMerger"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Webklex\\PDFMerger\\Test\\": "tests"
+            "bXi\\PDFMerger\\Test\\": "tests"
         }
     },
     "scripts": {

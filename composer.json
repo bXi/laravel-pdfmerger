@@ -1,5 +1,5 @@
 {
-    "name": "bXi/laravel-pdfmerger",
+    "name": "bxi/laravel-pdfmerger",
     "type": "library",
     "description": "Generic PDF merger for Laravel",
     "keywords": [
@@ -14,7 +14,7 @@
     "authors": [
         {
             "name": "Dennis Meinen",
-            "email": "github@bXi.com",
+            "email": "info@bixxy.net",
             "role": "Maintainer"
         }
     ],

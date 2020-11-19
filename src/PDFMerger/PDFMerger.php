@@ -15,6 +15,7 @@ namespace Bxi\PDFMerger;
 use FPDI;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 
 class PDFMerger {
 
@@ -144,7 +145,7 @@ class PDFMerger {
      */
     public function addString($string, $pages = 'all', $orientation = null){
 
-        $filePath = storage_path('tmp/'.str_random(16).'.pdf');
+        $filePath = storage_path('tmp/'.Str::random(16).'.pdf');
         $this->oFilesystem->put($filePath, $string);
         $this->tmpFiles->push($filePath);
 
@@ -214,13 +215,14 @@ class PDFMerger {
         $this->aFiles->each(function($file) use($oFPDI, $orientation, $duplexSafe){
             $file['orientation'] = is_null($file['orientation'])?$orientation:$file['orientation'];
             $count = $oFPDI->setSourceFile($file['name']);
+
             if ($file['pages'] == 'all') {
 
                 for ($i = 1; $i <= $count; $i++) {
                     $template   = $oFPDI->importPage($i);
                     $size       = $oFPDI->getTemplateSize($template);
 
-                    $oFPDI->AddPage($file['orientation'], [$size['w'], $size['h']]);
+                    $oFPDI->AddPage($file['orientation'], [$size['width'], $size['height']]);
                     $oFPDI->useTemplate($template);
                 }
             } else {
@@ -230,13 +232,13 @@ class PDFMerger {
                     }
                     $size = $oFPDI->getTemplateSize($template);
 
-                    $oFPDI->AddPage($file['orientation'], [$size['w'], $size['h']]);
+                    $oFPDI->AddPage($file['orientation'], [$size['width'], $size['height']]);
                     $oFPDI->useTemplate($template);
                 }
             }
 
             if ($duplexSafe && $oFPDI->page % 2) {
-                $oFPDI->AddPage($file['orientation'], [$size['w'], $size['h']]);
+                $oFPDI->AddPage($file['orientation'], [$size['width'], $size['height']]);
             }
         });
     }
